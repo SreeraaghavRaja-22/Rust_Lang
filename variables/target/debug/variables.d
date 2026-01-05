@@ -1,0 +1,1 @@
+/home/sreer/PROJECTS/RUST_PRAC/Rust_Lang/variables/target/debug/variables: /home/sreer/PROJECTS/RUST_PRAC/Rust_Lang/variables/src/compound_types.rs /home/sreer/PROJECTS/RUST_PRAC/Rust_Lang/variables/src/main.rs
