@@ -129,4 +129,26 @@
     - **'loop_label** is the syntax
     - {break, continue} 'loop_label is the syntax
 
+## Ownership 
 
+### Ownership Information 
+- Set of rules that govern how a Rust program manages memory.
+- **How Programs Usually Manage Memory**
+    - **Garbage Collection**: regularly looks at no longer used memory as the program runs 
+    - **Explicit Allocation**: programmer must explicitly allocate and free the memory
+    - **Rust**: memory management through a system of ownership with a set of rules and compiler checks 
+        - Will not compile if the rules are violated
+        - Features of ownership will slow down your program while it's running 
+
+### The Stack and the Heap
+- **Stack**: last in, first out (LIFO)
+    - **Pushing onto the stack**: adding data to the stack 
+    - **Popping off the stack**: removing data from the stack 
+    - All data stored on the stack must have a known, fixed size
+    - Faster than allocating on the heap because new data stored on the top of the stack
+- **Heap**: less organized 
+    - **Must request a certain amount of space** before adding data to the heap 
+        - **Memory allocator** finds a spot of fixed size, marks it as being in use, and returns a *pointer*
+        - **Allocating on the Heap** = **Allocating**
+        - **Pointer on the heap** is a known, fixed size, so pointer can be stored on stack
+    - **Data with unknown** size at compile time or size that must change must be stored on heap
