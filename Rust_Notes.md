@@ -152,3 +152,26 @@
         - **Allocating on the Heap** = **Allocating**
         - **Pointer on the heap** is a known, fixed size, so pointer can be stored on stack
     - **Data with unknown** size at compile time or size that must change must be stored on heap
+    - Slower because must follow a pointer to get there 
+- Important Note:
+    - keep track of what parts of code are using data on the heap and minimize the amount of duplicate data on the heap
+
+### Ownership Rules
+- Each value in Rust has an *owner*
+- There can only be **one** owner at a time
+- When the owner goes out of scope, the value will be dropped
+
+### Variable Scope 
+- when a variable **comes into scope**, it is valid 
+- it remains valid until it goes **out of scope**
+
+### String Type 
+- String Literals 
+    - Immutable 
+    - Not every string value can be known at compile time
+- Strings can be mutated but String Literals cannot  
+- **Allocated on the heap**
+
+#### Memory and Allocation 
+- String Literal
+    - know the contents at compile time, so the text is hardcoded 
