@@ -174,4 +174,21 @@
 
 #### Memory and Allocation 
 - String Literal
-    - know the contents at compile time, so the text is hardcoded 
+    - know the contents at compile time, so the text is hardcoded directly into final .exe 
+        - speed comes from the mutability 
+- String type 
+    - to support a mutable, growing piece of text 
+        - allocate an amount of memory on heap 
+        - unknown at compile time 
+        - memory must be requested from memory allocator at runtime 
+        - need a way of returning this memory to the allocator when we're done with ```String```
+    - Garbage Collector (GC)
+        - keeps track of and cleans up **unused** memory
+        - this is hard to do and **user has to keep track of it**
+            - need **one ```allocate``` with one ```free```**
+    - Rust Memory Management
+        - memory is automatically returned once the variable that it owns goes out of scope 
+            - Rust calls ```drop``` function for us 
+    - Cpp Memory Management 
+        - **Resource Acquisition Is Initialization (RAII)**: pattern of deallocating resources at the end fo an item's lifetime (similar to ```drop``` in Rust) 
+
