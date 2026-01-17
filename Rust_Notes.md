@@ -191,4 +191,23 @@
             - Rust calls ```drop``` function for us 
     - Cpp Memory Management 
         - **Resource Acquisition Is Initialization (RAII)**: pattern of deallocating resources at the end fo an item's lifetime (similar to ```drop``` in Rust) 
+    - Variables and Data Interacting with Move 
+        - multiple variables can interact with the same data in different ways 
+        - Integers with known values are pushed onto the stack
+        - String types have 3 components
+            - **ptr** to index 0
+            - **len**
+            - **capacity**
+        - When we copy string data we copy the pointer, the length, and the capacity
+            - Do not copy data on the heap
+            - both variables point to the same memory location on the heap
+        - **Double Free Error:** in the case of strings, if a variable goes out of scope then Rust will call the drop function that will free up the memory that the variable was pointing to on the heap, but if there is a copy that points to the same location, then both variables will free up the same location which will lead to errors and security vulnerabilities
+            - to fix this issue, Rust assumes that the original isn't valid when user makes a copy
+    ```rs
+        let s1 = String::from("hello");
+        let s2 = s1; 
+
+        println!("{s1}, world!"); // this will not work since s1 is no longer valid
+    ```
+    - bruh
 
