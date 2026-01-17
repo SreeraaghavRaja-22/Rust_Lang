@@ -3,3 +3,10 @@ pub fn variables_mut(
     let y = x; // both 5 values are pushed onto the stack
 )
 
+pub fn string_own(
+    let s1 = String::from("Hello");
+    let s2 = s1; 
+
+    println!("{s1}, world!");
+)
+

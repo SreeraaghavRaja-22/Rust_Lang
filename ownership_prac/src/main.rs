@@ -17,7 +17,10 @@ fn main() {
       // do stuff with s here    
     }
         // this scope is now over, and s is no longer valid (Rust calls drop here)
-
+    
+    variables_mut();
+    string_own();
+    
    }
 
 
